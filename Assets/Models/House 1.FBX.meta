@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 036d9af307b308d429b5414afce2eab9
+timeCreated: 1511904443
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Back Door
+    100002: Bathroom Door
+    100004: Bedroom Door
+    100006: Door Template
+    100008: Floor 0
+    100010: Floor 1
+    100012: Floor 2
+    100014: Front Door
+    100016: //RootNode
+    100018: Kitchen Door
+    100020: Lounge Door
+    100022: Template External Door
+    100024: Understairs Door
+    400000: Back Door
+    400002: Bathroom Door
+    400004: Bedroom Door
+    400006: Door Template
+    400008: Floor 0
+    400010: Floor 1
+    400012: Floor 2
+    400014: Front Door
+    400016: //RootNode
+    400018: Kitchen Door
+    400020: Lounge Door
+    400022: Template External Door
+    400024: Understairs Door
+    2300000: Back Door
+    2300002: Bathroom Door
+    2300004: Bedroom Door
+    2300006: Door Template
+    2300008: Floor 0
+    2300010: Floor 1
+    2300012: Floor 2
+    2300014: Front Door
+    2300016: Kitchen Door
+    2300018: Lounge Door
+    2300020: Template External Door
+    2300022: Understairs Door
+    3300000: Back Door
+    3300002: Bathroom Door
+    3300004: Bedroom Door
+    3300006: Door Template
+    3300008: Floor 0
+    3300010: Floor 1
+    3300012: Floor 2
+    3300014: Front Door
+    3300016: Kitchen Door
+    3300018: Lounge Door
+    3300020: Template External Door
+    3300022: Understairs Door
+    4300000: Floor 1
+    4300002: Floor 0
+    4300004: Kitchen Door
+    4300006: Understairs Door
+    4300008: Lounge Door
+    4300010: Floor 2
+    4300012: Door Template
+    4300014: Front Door
+    4300016: Bedroom Door
+    4300018: Bathroom Door
+    4300020: Back Door
+    4300022: Template External Door
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
