@@ -18,6 +18,37 @@ ModelImporter:
     100020: Lounge Door
     100022: Template External Door
     100024: Understairs Door
+    100026: Back External Door
+    100028: Bedroom Bed
+    100030: BedRoom Rug
+    100032: Bedroom TV
+    100034: Bedroom TV Stand
+    100036: Bedroom Wardrobe
+    100038: Box001
+    100040: Cold
+    100042: Duvet
+    100044: Front External Door
+    100046: Hot
+    100048: Kitchen Cupboard
+    100050: Kitchen Cupboard 2
+    100052: Kitchen Cupboard 3
+    100054: Kitchen Extractor
+    100056: Kitchen Fridge
+    100058: Kitchen Taps
+    100060: LivingRoom Rug
+    100062: LivingRoom Sofa
+    100064: LivingRoom Sofa 2
+    100066: LivingRoom Table
+    100068: LivingRoom TV
+    100070: LivingRoom TV Stand
+    100072: Mattress
+    100074: Pillow 2
+    100076: Pillow1
+    100078: Tap
+    100080: Tap End
+    100082: Duvet001
+    100084: Duvet001_MeshPart0
+    100086: Duvet001_MeshPart1
     400000: Back Door
     400002: Bathroom Door
     400004: Bedroom Door
@@ -31,6 +62,37 @@ ModelImporter:
     400020: Lounge Door
     400022: Template External Door
     400024: Understairs Door
+    400026: Back External Door
+    400028: Bedroom Bed
+    400030: BedRoom Rug
+    400032: Bedroom TV
+    400034: Bedroom TV Stand
+    400036: Bedroom Wardrobe
+    400038: Box001
+    400040: Cold
+    400042: Duvet
+    400044: Front External Door
+    400046: Hot
+    400048: Kitchen Cupboard
+    400050: Kitchen Cupboard 2
+    400052: Kitchen Cupboard 3
+    400054: Kitchen Extractor
+    400056: Kitchen Fridge
+    400058: Kitchen Taps
+    400060: LivingRoom Rug
+    400062: LivingRoom Sofa
+    400064: LivingRoom Sofa 2
+    400066: LivingRoom Table
+    400068: LivingRoom TV
+    400070: LivingRoom TV Stand
+    400072: Mattress
+    400074: Pillow 2
+    400076: Pillow1
+    400078: Tap
+    400080: Tap End
+    400082: Duvet001
+    400084: Duvet001_MeshPart0
+    400086: Duvet001_MeshPart1
     2300000: Back Door
     2300002: Bathroom Door
     2300004: Bedroom Door
@@ -43,6 +105,36 @@ ModelImporter:
     2300018: Lounge Door
     2300020: Template External Door
     2300022: Understairs Door
+    2300024: Back External Door
+    2300026: Bedroom Bed
+    2300028: BedRoom Rug
+    2300030: Bedroom TV
+    2300032: Bedroom TV Stand
+    2300034: Bedroom Wardrobe
+    2300036: Box001
+    2300038: Cold
+    2300040: Duvet
+    2300042: Front External Door
+    2300044: Hot
+    2300046: Kitchen Cupboard
+    2300048: Kitchen Cupboard 2
+    2300050: Kitchen Cupboard 3
+    2300052: Kitchen Extractor
+    2300054: Kitchen Fridge
+    2300056: Kitchen Taps
+    2300058: LivingRoom Rug
+    2300060: LivingRoom Sofa
+    2300062: LivingRoom Sofa 2
+    2300064: LivingRoom Table
+    2300066: LivingRoom TV
+    2300068: LivingRoom TV Stand
+    2300070: Mattress
+    2300072: Pillow 2
+    2300074: Pillow1
+    2300076: Tap
+    2300078: Tap End
+    2300080: Duvet001_MeshPart0
+    2300082: Duvet001_MeshPart1
     3300000: Back Door
     3300002: Bathroom Door
     3300004: Bedroom Door
@@ -55,6 +147,36 @@ ModelImporter:
     3300018: Lounge Door
     3300020: Template External Door
     3300022: Understairs Door
+    3300024: Back External Door
+    3300026: Bedroom Bed
+    3300028: BedRoom Rug
+    3300030: Bedroom TV
+    3300032: Bedroom TV Stand
+    3300034: Bedroom Wardrobe
+    3300036: Box001
+    3300038: Cold
+    3300040: Duvet
+    3300042: Front External Door
+    3300044: Hot
+    3300046: Kitchen Cupboard
+    3300048: Kitchen Cupboard 2
+    3300050: Kitchen Cupboard 3
+    3300052: Kitchen Extractor
+    3300054: Kitchen Fridge
+    3300056: Kitchen Taps
+    3300058: LivingRoom Rug
+    3300060: LivingRoom Sofa
+    3300062: LivingRoom Sofa 2
+    3300064: LivingRoom Table
+    3300066: LivingRoom TV
+    3300068: LivingRoom TV Stand
+    3300070: Mattress
+    3300072: Pillow 2
+    3300074: Pillow1
+    3300076: Tap
+    3300078: Tap End
+    3300080: Duvet001_MeshPart0
+    3300082: Duvet001_MeshPart1
     4300000: Floor 1
     4300002: Floor 0
     4300004: Kitchen Door
@@ -67,6 +189,36 @@ ModelImporter:
     4300018: Bathroom Door
     4300020: Back Door
     4300022: Template External Door
+    4300024: Bedroom TV
+    4300026: Bedroom Bed
+    4300028: Mattress
+    4300030: Pillow1
+    4300032: Pillow 2
+    4300034: Duvet
+    4300036: Bedroom TV Stand
+    4300038: BedRoom Rug
+    4300040: Bedroom Wardrobe
+    4300042: Kitchen Taps
+    4300044: Tap
+    4300046: Hot
+    4300048: Cold
+    4300050: Tap End
+    4300052: Front External Door
+    4300054: Back External Door
+    4300056: Kitchen Extractor
+    4300058: Kitchen Fridge
+    4300060: Kitchen Cupboard
+    4300062: Kitchen Cupboard 2
+    4300064: Kitchen Cupboard 3
+    4300066: LivingRoom TV
+    4300068: LivingRoom TV Stand
+    4300070: LivingRoom Table
+    4300072: LivingRoom Sofa
+    4300074: LivingRoom Sofa 2
+    4300076: LivingRoom Rug
+    4300078: Box001
+    4300080: Duvet001_MeshPart0
+    4300082: Duvet001_MeshPart1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -103,7 +255,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
