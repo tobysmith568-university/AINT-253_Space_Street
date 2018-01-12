@@ -66,6 +66,8 @@ ModelImporter:
     100116: Toilet Bowl
     100118: Toilet System
     100120: Understairs Door
+    100122: Floor 2
+    100124: Light
     400000: Back External Door
     400002: Bathroom Door
     400004: Bedroom Bed
@@ -127,6 +129,8 @@ ModelImporter:
     400116: Toilet Bowl
     400118: Toilet System
     400120: Understairs Door
+    400122: Floor 2
+    400124: Light
     2300000: Back External Door
     2300002: Bathroom Door
     2300004: Bedroom Bed
@@ -186,6 +190,8 @@ ModelImporter:
     2300112: Toilet Bowl
     2300114: Toilet System
     2300116: Understairs Door
+    2300118: Floor 2
+    2300120: Light
     3300000: Back External Door
     3300002: Bathroom Door
     3300004: Bedroom Bed
@@ -245,6 +251,8 @@ ModelImporter:
     3300112: Toilet Bowl
     3300114: Toilet System
     3300116: Understairs Door
+    3300118: Floor 2
+    3300120: Light
     4300000: Floor 1
     4300002: Bathroom Door
     4300004: Bedroom Door
@@ -304,6 +312,8 @@ ModelImporter:
     4300112: Template External Door
     4300114: Box001
     4300116: Floor 003
+    4300118: Floor 2
+    4300120: Light
     9500000: //RootNode
   materials:
     importMaterials: 1
