@@ -30,7 +30,18 @@ public class PlayerMovement : MonoBehaviour
     float movementSpeedSprint = 7.5f;
 
     [SerializeField]
-    float jumpPower = 10;
+    float jumpPower = 5;
+
+    [SerializeField]
+    Text openText;
+    GameObject currentDoor;
+    [SerializeField]
+    LayerMask doors;
+    [SerializeField]
+    Camera mainCamera;
+
+    [SerializeField]
+    AudioSource doorHiss;
     
     float rotationX = 0F;
     float rotationY = 0F;
@@ -58,18 +69,6 @@ public class PlayerMovement : MonoBehaviour
         invertY = MyPrefs.YAxisInverted;
         lookSensitivityX = MyPrefs.XSensitivity;
         lookSensitivityY = MyPrefs.YSensitivity;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Water")
-            isFloating = true;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Water")
-            isFloating = false;
     }
 
     void Update()
@@ -115,6 +114,48 @@ public class PlayerMovement : MonoBehaviour
         rotationY = ClampAngle(rotationY, -40F, 80F);
         Quaternion yQuaternion = Quaternion.AngleAxis((invertY) ? -rotationY : rotationY, -Vector3.right);
         topTransform.localRotation = originalRotation * yQuaternion;
+
+        RaycastHit raycastHit;
+        Animator a;
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out raycastHit, 1.5f, doors))
+        {
+            GameObject g = raycastHit.transform.gameObject;
+            if (LayerMask.LayerToName(g.layer) == "Bunker Door")
+            {
+                openText.text = "You cannot open the bunker door!";
+            }
+            else
+            {
+                if (LayerMask.LayerToName(g.layer) == "Airlock Door")
+                    g = g.transform.parent.parent.gameObject;
+
+                a = g.GetComponent<Animator>();
+
+                if (a.GetBool("isOpen"))
+                    openText.text = "Click to close: " + g.name;
+                else
+                    openText.text = "Click to open: " + g.name;
+
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    a.SetBool("isOpen", !a.GetBool("isOpen"));
+                }
+            }
+        }
+        else
+            openText.text = "";
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Water")
+            isFloating = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Water")
+            isFloating = false;
     }
 
     /// <summary>
@@ -156,5 +197,10 @@ public class PlayerMovement : MonoBehaviour
         {
             lookSensitivityX = lookSensitivityY /= 8;
         }
+    }
+
+    public void DoorHiss()
+    {
+        doorHiss.Play();
     }
 }

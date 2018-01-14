@@ -68,6 +68,11 @@ ModelImporter:
     100120: Understairs Door
     100122: Floor 2
     100124: Light
+    100126: Bathroom Door 1
+    100128: Bedrooom Door
+    100130: LivingRoom Door
+    100132: Back Door
+    100134: Front Door
     400000: Back External Door
     400002: Bathroom Door
     400004: Bedroom Bed
@@ -131,6 +136,11 @@ ModelImporter:
     400120: Understairs Door
     400122: Floor 2
     400124: Light
+    400126: Bathroom Door 1
+    400128: Bedrooom Door
+    400130: LivingRoom Door
+    400132: Back Door
+    400134: Front Door
     2300000: Back External Door
     2300002: Bathroom Door
     2300004: Bedroom Bed
@@ -192,6 +202,11 @@ ModelImporter:
     2300116: Understairs Door
     2300118: Floor 2
     2300120: Light
+    2300122: Bathroom Door 1
+    2300124: Bedrooom Door
+    2300126: LivingRoom Door
+    2300128: Back Door
+    2300130: Front Door
     3300000: Back External Door
     3300002: Bathroom Door
     3300004: Bedroom Bed
@@ -253,6 +268,11 @@ ModelImporter:
     3300116: Understairs Door
     3300118: Floor 2
     3300120: Light
+    3300122: Bathroom Door 1
+    3300124: Bedrooom Door
+    3300126: LivingRoom Door
+    3300128: Back Door
+    3300130: Front Door
     4300000: Floor 1
     4300002: Bathroom Door
     4300004: Bedroom Door
@@ -314,6 +334,11 @@ ModelImporter:
     4300116: Floor 003
     4300118: Floor 2
     4300120: Light
+    4300122: Bathroom Door
+    4300124: Bedrooom Door
+    4300126: LivingRoom Door
+    4300128: Front Door
+    4300130: Back Door
     9500000: //RootNode
   materials:
     importMaterials: 1
