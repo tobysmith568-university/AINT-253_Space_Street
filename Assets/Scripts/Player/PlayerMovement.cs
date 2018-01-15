@@ -44,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     AudioSource doorHiss;
+    [SerializeField]
+    AudioSource itemPickup;
 
     [SerializeField]
     Text found;
@@ -107,7 +109,8 @@ public class PlayerMovement : MonoBehaviour
             do
             {
                 rand = UnityEngine.Random.Range(0, theLocations.Length);
-            } while (usedIndexes.Contains(rand));
+            }
+            while (usedIndexes.Contains(rand));
             usedIndexes[i] = rand;
 
             theObjects[i].transform.position = theLocations[rand].transform.position;
@@ -187,6 +190,8 @@ public class PlayerMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
+                    itemPickup.Play();
+
                     if (found.color.a == 0)
                         found.color = Color.white;
                     switch (g.name)
