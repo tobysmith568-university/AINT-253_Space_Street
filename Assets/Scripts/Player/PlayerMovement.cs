@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -42,6 +44,23 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     AudioSource doorHiss;
+
+    [SerializeField]
+    Text found;
+    [SerializeField]
+    Text gameOver;
+    [SerializeField]
+    Slider airSlider;
+    [SerializeField]
+    Image oxygenBar;
+
+    [SerializeField]
+    GameObject[] theObjects;
+    [SerializeField]
+    GameObject[] theLocations;
+
+    [SerializeField]
+    Fade fade;
     
     float rotationX = 0F;
     float rotationY = 0F;
@@ -52,12 +71,23 @@ public class PlayerMovement : MonoBehaviour
     bool invertX;
     bool invertY;
 
+    bool canMove = true;
+    int secondsLeft = 6 * 60;
+
+    public bool hasSmallSpanner;
+    public bool hasLargeSpanner;
+    public bool hasHammer;
+    public bool hasCrowbar;
+
+    bool tested;
+
+    Color defaultO2bar;
+
     void Start()
     {
         //NEEDS MOVING TO A MAIN GAME CONTROLLER
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
 
         player = GetComponent<Transform>();
         mainRigidBody = GetComponent<Rigidbody>();
@@ -69,10 +99,30 @@ public class PlayerMovement : MonoBehaviour
         invertY = MyPrefs.YAxisInverted;
         lookSensitivityX = MyPrefs.XSensitivity;
         lookSensitivityY = MyPrefs.YSensitivity;
+
+        int[] usedIndexes = new int[theObjects.Length];
+        int rand;
+        for (int i = 0; i < theObjects.Length; i++)
+        {
+            do
+            {
+                rand = UnityEngine.Random.Range(0, theLocations.Length);
+            } while (usedIndexes.Contains(rand));
+            usedIndexes[i] = rand;
+
+            theObjects[i].transform.position = theLocations[rand].transform.position;
+        }
+
+        defaultO2bar = oxygenBar.color;
+
+        StartCoroutine(Timer());
     }
 
     void Update()
     {
+        if (!canMove)
+            return;
+
         //Game quitting ---------------- PROBABLY NEEDS MOVING TO A UI SCRIPT
         if (MyInput.GetButtonDown(Control.Pause))
             SceneManager.LoadScene(0, LoadSceneMode.Single);
@@ -111,18 +161,75 @@ public class PlayerMovement : MonoBehaviour
 
         //Looking Y axis
         rotationY += Input.GetAxis("Mouse Y") * lookSensitivityY;
-        rotationY = ClampAngle(rotationY, -40F, 80F);
+        rotationY = ClampAngle(rotationY, -60F, 80F);
         Quaternion yQuaternion = Quaternion.AngleAxis((invertY) ? -rotationY : rotationY, -Vector3.right);
         topTransform.localRotation = originalRotation * yQuaternion;
 
         RaycastHit raycastHit;
         Animator a;
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out raycastHit, 1.5f, doors))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out raycastHit, 2f, doors))
         {
             GameObject g = raycastHit.transform.gameObject;
+
             if (LayerMask.LayerToName(g.layer) == "Bunker Door")
             {
                 openText.text = "You cannot open the bunker door!";
+            }
+            else if (LayerMask.LayerToName(g.layer) == "Lab Door")
+            {
+                openText.text = "You cannot open the lab door!";
+            }
+            else if (LayerMask.LayerToName(g.layer) == "Tool")
+            {
+                g = g.transform.parent.gameObject;
+
+                openText.text = "Click to pick up the: " + g.name;
+
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    if (found.color.a == 0)
+                        found.color = Color.white;
+                    switch (g.name)
+                    {
+                        case "Small Spanner":
+                            hasSmallSpanner = true;
+                            Debug.Log(g.name);
+                            break;
+                        case "Big Spanner":
+                            hasLargeSpanner = true;
+                            Debug.Log(g.name);
+                            break;
+                        case "Hammer":
+                            hasHammer = true;
+                            Debug.Log(g.name);
+                            break;
+                        case "Crowbar":
+                            hasCrowbar = true;
+                            Debug.Log(g.name);
+                            break;
+                    }
+
+                    found.text += "\n" + g.name;
+                    g.SetActive(false);
+                }
+            }
+            else if (LayerMask.LayerToName(g.layer) == "Screen")
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    if (hasSmallSpanner && hasLargeSpanner && hasHammer && hasCrowbar)
+                    {
+                        openText.text = "Fixed!";
+                        EndGame();
+                    }
+                    else
+                        openText.text = "You don't have all the parts you need!";
+
+                    tested = true;
+                }
+
+                if (!tested)
+                    openText.text = "Click to test the oxygen machine";
             }
             else
             {
@@ -143,7 +250,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         else
+        {
             openText.text = "";
+            tested = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -202,5 +312,39 @@ public class PlayerMovement : MonoBehaviour
     public void DoorHiss()
     {
         doorHiss.Play();
+    }
+
+    IEnumerator Timer()
+    {
+        while (secondsLeft > 0)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+            secondsLeft--;
+            airSlider.value = secondsLeft;
+
+            if (secondsLeft <= 30)
+            {
+                if (secondsLeft % 2 == 0)
+                    oxygenBar.color = Color.red;
+                else
+                    oxygenBar.color = defaultO2bar;
+            }
+        }
+
+        gameOver.text = "You ran out of oxygen!";
+
+        EndGame();
+        
+    }
+
+    private void EndGame()
+    {
+        canMove = false;
+        StartCoroutine(fade.FadeIn());
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -1,0 +1,15 @@
+Fonts:
+
+General space font - http://www.1001fonts.com/space-age-font.html#styles
+
+
+
+Sounds:
+
+Button hover - https://freesound.org/people/BMacZero/sounds/164102/
+
+
+
+Assets:
+
+Trees - Unity Standard Assets
